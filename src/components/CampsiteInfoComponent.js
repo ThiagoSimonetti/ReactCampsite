@@ -21,22 +21,24 @@ function RenderComments({ comments }) {
       <div className="col-md-5 m-1">
         <h4 className="mt-1 font-italic">Comments</h4>
 
-        {comments.map((comment) => (
-          <div key={comment.id} className="shadow-sm rounded p-2 my-3">
-            <p>
-              {comment.text} <br></br> -- {comment.author},{" "}
-              {new Intl.DateTimeFormat("en-US", {
-                year: "numeric",
-                month: "short",
-                day: "2-digit",
-              }).format(new Date(Date.parse(comment.date)))}{" "}
-            </p>
-          </div>
-        ))}
+        {comments.map((comment) => {
+          return (
+            <div key={comment.id} className="shadow-sm rounded p-2 my-3">
+              <p>
+                {comment.text} <br></br> -- {comment.author},{" "}
+                {new Intl.DateTimeFormat("en-US", {
+                  year: "numeric",
+                  month: "short",
+                  day: "2-digit",
+                }).format(new Date(Date.parse(comment.date)))}{" "}
+              </p>
+            </div>
+          );
+        })}
       </div>
     );
   }
-  return <div></div>;
+  return <div />;
 }
 
 function CampsiteInfo(props) {
