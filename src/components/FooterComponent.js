@@ -51,13 +51,17 @@ function Footer(props) {
             </a>
           </div>
           <div className="col-sm-4 text-center">
-            <a role="button" className="btn btn-link" href="tel:+12065551234">
-              <i className="fa fa-phone" /> 1-206-555-1234
+            <a
+              role="button"
+              className="btn btn-link text-nowrap"
+              href="tel:+12065551234"
+            >
+              <i className="fa fa-phone " /> 1-206-555-1234
             </a>
             <br />
             <a
               role="button"
-              className="btn btn-link"
+              className="btn btn-link text-nowrap"
               href="mailto:notreal@notreal.co"
             >
               <i className="fa fa-envelope-o" /> campsites@nucamp.co
