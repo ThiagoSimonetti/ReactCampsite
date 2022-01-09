@@ -16,7 +16,6 @@ import {
   fetchComments,
   fetchPromotions,
   fetchPartners,
-  fetchFeedback,
 } from "../redux/ActionCreators";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -58,7 +57,6 @@ const mapDispatchToProps = {
   fetchComments: () => fetchComments(),
   fetchPromotions: () => fetchPromotions(),
   fetchPartners: () => fetchPartners(),
-  fetchFeedback: () => fetchFeedback(),
 };
 
 class Main extends Component {
@@ -67,7 +65,6 @@ class Main extends Component {
     this.props.fetchComments();
     this.props.fetchPromotions();
     this.props.fetchPartners();
-    // this.props.fetchFeedback();
   }
 
   render() {

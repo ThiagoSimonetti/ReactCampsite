@@ -210,44 +210,10 @@ export const addPartners = (partners) => ({
 
 // FEEDBACK
 
-export const fetchFeedback = () => {
-  return fetch(baseUrl + "feedbacks")
-    .then(
-      (response) => {
-        if (response.ok) {
-          return response;
-        } else {
-          const error = new Error(
-            `Error ${response.status}: ${response.statusText}`
-          );
-          error.response = response;
-          throw error;
-        }
-      },
-      (error) => {
-        const errMess = new Error(error.message);
-        throw errMess;
-      }
-    )
-    .then((response) => response.json());
-  // .then(feedbacks => dispatch(addFeedbacks(feedbacks)))
-  // .catch(error => dispatch(feedbacksFailed(error.message)));
-};
-
 export const postFeedback =
-  (
-    // feedbackId,
-    firstName,
-    lastName,
-    phoneNum,
-    email,
-    agree,
-    contactType,
-    feedback
-  ) =>
+  (firstName, lastName, phoneNum, email, agree, contactType, feedback) =>
   () => {
     const newFeedback = {
-      // feedbackId: feedbackId,
       firstName: firstName,
       lastName: lastName,
       phoneNum: phoneNum,

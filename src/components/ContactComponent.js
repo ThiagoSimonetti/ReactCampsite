@@ -43,16 +43,7 @@ class Contact extends Component {
   handleSubmit(values) {
     console.log(values);
     this.props.resetFeedbackForm();
-    this.props.postFeedback(
-      //  this.props.feedbackId,
-      values.firstName,
-      values.lastName,
-      values.phoneNum,
-      values.email,
-      values.agree,
-      values.contactType,
-      values.feedback
-    );
+    this.props.postFeedback(values);
   }
 
   render() {

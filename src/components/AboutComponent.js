@@ -14,15 +14,16 @@ import { Fade, Stagger } from "react-animation-components";
 
 function PartnerList(props) {
   console.log("[PARTNERS]", props.partners.partners);
-  // const partners = props.partners.partners.map((partner) => {
-  //   return (
-  //     <Fade key={partner.id}>
-  //       <Media tag="li">
-  //         <RenderPartner partner={partner} />
-  //       </Media>
-  //     </Fade>
-  //   );
-  // });
+  const partners = props.partners.partners.map((partner) => {
+    return (
+      <Fade key={partner.id}>
+        <Media tag="li">
+          <RenderPartner partner={partner} />
+        </Media>
+      </Fade>
+    );
+  });
+
   if (props.partners.isLoading) {
     return <Loading />;
   }
@@ -36,17 +37,7 @@ function PartnerList(props) {
   return (
     <div className="col mt-4">
       <Media list>
-        <Stagger in>
-          {props.partners.partners.map((partner) => {
-            return (
-              <Fade key={partner.id} in>
-                <Media tag="li">
-                  <RenderPartner partner={partner} />
-                </Media>
-              </Fade>
-            );
-          })}
-        </Stagger>
+        <Stagger in>{partners}</Stagger>
       </Media>
     </div>
   );
